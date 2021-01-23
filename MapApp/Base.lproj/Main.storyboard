@@ -15,10 +15,37 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6c4-vX-Uk6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3D-9b-0v7">
+                                <rect key="frame" x="344" y="652" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Pe6-9X-W5x"/>
+                                    <constraint firstAttribute="height" constant="50" id="SrA-53-vqa"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="cameraIcon"/>
+                                <connections>
+                                    <action selector="didTapCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dRE-T8-5bY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F3D-9b-0v7" secondAttribute="bottom" constant="20" id="0Bd-fm-zLg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6c4-vX-Uk6" secondAttribute="bottom" id="Mws-of-6lV"/>
+                            <constraint firstItem="6c4-vX-Uk6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Og5-Sx-1Sd"/>
+                            <constraint firstItem="6c4-vX-Uk6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PA2-NM-ngz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6c4-vX-Uk6" secondAttribute="trailing" id="ZCH-F9-SgS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F3D-9b-0v7" secondAttribute="trailing" constant="20" id="mXK-in-cwq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="MbJ-f8-Qhn"/>
+                    <connections>
+                        <outlet property="mapView" destination="6c4-vX-Uk6" id="eAo-zS-jtL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,6 +72,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cameraIcon" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import MapKit
 
 class MapVC: UIViewController {
+    
+    @IBOutlet weak var mapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +22,10 @@ class MapVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
        // navigationController?.navigationBar.barTintColor  = green // for small titles
         navigationController?.view.backgroundColor = green // for large titles
+    }
+    
+    @IBAction func didTapCameraButton(_ sender: UIButton) {
+        print("tap camera")
     }
 }
 
