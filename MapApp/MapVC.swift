@@ -7,14 +7,23 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class MapVC: UIViewController {
+class MapVC: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         customizeNavBar()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        mapView.userTrackingMode = .follow
+        
     }
 
     private func customizeNavBar() {

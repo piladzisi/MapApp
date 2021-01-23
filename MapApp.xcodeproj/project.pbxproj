@@ -14,6 +14,7 @@
 		B5DA817125BC9F2D004B2DC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5DA817025BC9F2D004B2DC9 /* Assets.xcassets */; };
 		B5DA817425BC9F2D004B2DC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5DA817225BC9F2D004B2DC9 /* LaunchScreen.storyboard */; };
 		B5DA817E25BCA230004B2DC9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DA817D25BCA230004B2DC9 /* UIColor+Extensions.swift */; };
+		B5DA818225BCBFC4004B2DC9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DA818125BCBFC4004B2DC9 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B5DA817325BC9F2D004B2DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5DA817525BC9F2D004B2DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5DA817D25BCA230004B2DC9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		B5DA818125BCBFC4004B2DC9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5DA818225BCBFC4004B2DC9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 			children = (
 				B5DA816625BC9F2B004B2DC9 /* MapApp */,
 				B5DA816525BC9F2B004B2DC9 /* Products */,
+				B5DA818025BCBFC4004B2DC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +72,14 @@
 				B5DA817D25BCA230004B2DC9 /* UIColor+Extensions.swift */,
 			);
 			path = MapApp;
+			sourceTree = "<group>";
+		};
+		B5DA818025BCBFC4004B2DC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5DA818125BCBFC4004B2DC9 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
