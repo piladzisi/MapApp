@@ -12,8 +12,14 @@ import CoreLocation
 class MapVC: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var imagesCollectionView: UICollectionView!
+   // @IBOutlet weak var toggleImagesButton: UIButton!
+    @IBOutlet weak var cameraButton: UIButton!
+    
+    @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
     
     let locationManager = CLLocationManager()
+    var imagesHidden = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +56,30 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         @unknown default:
             print("this should not happen!")
         }
+    }
+    
+    @IBAction func didTapToggleImage(_ sender: UIButton) {
+        if imagesHidden == true {
+            sender.setTitle("Hide Images", for: .normal)
+            collectionViewBottomConstraint.constant = 0
+            cameraButton.isUserInteractionEnabled = false
+        } else {
+            sender.setTitle("Show Images", for: .normal)
+            collectionViewBottomConstraint.constant = -110
+            cameraButton.isUserInteractionEnabled = true
+           
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.cameraButton.alpha = self.imagesHidden ? 0 : 1
+            self.imagesCollectionView.alpha = self.imagesHidden ? 1 : 0
+            self.view.layoutIfNeeded()
+        }
+         
+        imagesHidden = !imagesHidden
+    }
+    
+    @IBAction func didTapCurrentLocation(_ sender: Any) {
     }
 }
 
